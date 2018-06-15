@@ -280,7 +280,7 @@ class NoSafe:
 			if command[0] == 'rehash':
 				if user in self.admin:
 					time.sleep(1)
-					self.SendCommand('QUIT irc.priv8.jp ')
+					self.SendCommand('QUIT #Sua saída aqui ')
 					self.s.close()
 					self.close = True
 					exit(1)
@@ -819,7 +819,7 @@ class NoSafe:
 				self.Logging(str(user_channel), str(user_nick), str(text_log)) # Grava os logs
 
 				# Banner oficial:
-				banner = '14,1[#' + user_channel[1:] + '@Priv8.jp] '
+				banner = '14,1[#' + user_channel[1:] + '#Seu banner aqui] '
 
 				try:
 					if (str(user_msg)[0] == str(self.prefix)):
@@ -832,18 +832,18 @@ class NoSafe:
 			
 if __name__ == '__main__':
 
-	servidor = 'irc.priv8.jp'
-	porta = 6667
-	nick = 'z10n'
-	nome = 'Nosafe'
-	email = 'nosafe@priv8.jp'
-	canal_principal = '#python' # Canal de comando do bot
-	ajoin = []#'#nosafe', '#priv8', '#inurlbrasil', '#brasil', '#protowave'] # Canais secundários, .sendall enviará mensagem para esses canais.
-	admin = ['ins3c7', 'Zirou', 'vL'] # Nicks para acessos à funções especiais do bot
+	servidor = ''
+	porta = 
+	nick = ''
+	nome = ''
+	email = ''
+	canal_principal = '' # Canal de comando do bot
+	ajoin = []# Canais secundários, .sendall enviará mensagem para esses canais.
+	admin = [] # Nicks para acessos à funções especiais do bot
 	prefix = '.' # Prefixo para uso dos comandos
 	verbose = True
 
-	simple_banner = '14,1[Priv8.jp]0 '
+	simple_banner = '14,1[#Seu banner aqui]0 '
 
 bot = NoSafe(servidor, porta, nick, nome, email, canal_principal, ajoin, admin, prefix, verbose, simple_banner)
 bot.run()
